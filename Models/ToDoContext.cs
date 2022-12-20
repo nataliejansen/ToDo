@@ -32,8 +32,6 @@ namespace ToDoAPI.Models
         {
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.Property(e => e.CategoryId).ValueGeneratedNever();
-
                 entity.Property(e => e.CategoryDescription).HasMaxLength(100);
 
                 entity.Property(e => e.CategoryName).HasMaxLength(25);
@@ -41,8 +39,6 @@ namespace ToDoAPI.Models
 
             modelBuilder.Entity<ToDo>(entity =>
             {
-                entity.Property(e => e.ToDoId).ValueGeneratedNever();
-
                 entity.Property(e => e.Name).HasMaxLength(100);
 
                 entity.HasOne(d => d.Category)
